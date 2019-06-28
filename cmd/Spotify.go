@@ -28,8 +28,8 @@ func isPremium(ID string) bool {
 	return false
 }
 
-//isBlackListed : gets BlackListed status of someone.
-func isBlackListed(ID string) bool {
+//IsBlackListed : gets BlackListed status of someone.
+func IsBlackListed(ID string) bool {
 	for i := range config.BlackList {
 		if ID == config.BlackList[i] {
 			return true
@@ -65,7 +65,7 @@ func Spotify(session *discordgo.Session, m *discordgo.MessageCreate) {
 		config.Waiting[m.Author.ID] = time.Now().Add(10 * time.Minute)
 	}
 
-	if isBlackListed(m.Author.ID) {
+	if IsBlackListed(m.Author.ID) {
 		return
 	}
 

@@ -4,6 +4,7 @@ import (
 	"os"
 	"strings"
 
+	commands "Giveaway/cmd"
 	"Giveaway/config"
 
 	"github.com/bwmarrin/discordgo"
@@ -13,6 +14,10 @@ import (
 // message is created on any channel that the autenticated bot has access to.
 
 func CommandHandle(session *discordgo.Session, m *discordgo.MessageCreate) {
+	if commands.IsBlackListed(m.Author.ID) {
+		return
+	}
+
 	user := m.Author
 	if BotUsr, err := session.User("@me"); user.ID == BotUsr.ID || user.Bot || err != nil {
 		return

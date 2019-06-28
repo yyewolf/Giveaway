@@ -4,3 +4,4 @@ cmd/token.go
 Giveaway.exe
 Build.bat
 BuildCompreLinux.bat
+config/token.go
