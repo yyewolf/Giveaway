@@ -41,7 +41,7 @@ func AddBlacklist(session *discordgo.Session, m *discordgo.MessageCreate) {
 		Message += m.Mentions[i].Username + "\n"
 	}
 	embed := &discordgo.MessageEmbed{
-		Title:       "Premium added :",
+		Title:       "Added to blacklist :",
 		Description: Message,
 		Color:       0xFFDD00,
 	}
@@ -65,7 +65,7 @@ func RemoveBlackList(session *discordgo.Session, m *discordgo.MessageCreate) {
 		Message += m.Mentions[i].Username + "\n"
 	}
 	embed := &discordgo.MessageEmbed{
-		Title:       "Premium removed :",
+		Title:       "Removed to blacklist :",
 		Description: Message,
 		Color:       0xFFDD00,
 	}
