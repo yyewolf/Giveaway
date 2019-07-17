@@ -5,3 +5,4 @@ Giveaway.exe
 Build.bat
 BuildCompreLinux.bat
 config/token.go
+*.bat
